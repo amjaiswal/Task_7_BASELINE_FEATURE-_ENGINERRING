@@ -1,151 +1,97 @@
 # Task 07 - Baseline Target Feature Engineering
 
-## 📌 Project Overview
+## Objective
 
-This project focuses on Feature Engineering for an Employee Attrition Prediction system. The objective is to transform raw employee data into meaningful features that improve machine learning performance while ensuring there is no target leakage.
-
-The project includes data preprocessing, feature engineering, model training, feature importance analysis, leakage checking, and model saving using a Random Forest Classifier.
+Perform baseline feature engineering on the Employee Attrition dataset to create meaningful features, prevent target leakage, and train a baseline Random Forest model.
 
 ---
 
-## 🎯 Objectives
+## Dataset
 
-- Load and preprocess employee data
-- Handle missing values and duplicate records
-- Engineer meaningful features
-- Encode categorical variables
-- Train a Random Forest Classifier
-- Analyze feature importance
-- Perform leakage checks
-- Save the trained model
+Employee Attrition Dataset
 
 ---
 
-## 📂 Project Structure
+## Technologies Used
 
-Task07_Baseline_Feature_Engineering
-
-├── data/
-│ └── employee_attrition.csv
-│
-├── models/
-│ └── random_forest.pkl
-│
-├── outputs/
-│ ├── feature_importance.png
-│ └── leakage_report.txt
-│
-├── feature_engineering.py
-├── main.py
-├── README.md
-├── requirements.txt
-└── .gitignore
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Joblib
 
 ---
 
-## 🛠 Technologies Used
+## Steps Performed
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Joblib
+* Loaded the Employee Attrition dataset
+* Removed duplicate records
+* Handled missing values
+* Engineered new features:
 
----
-
-## ⚙️ Feature Engineering
-
-The following engineered features were created:
-
-- IncomePerYear
-- ExperienceRatio
-- IncomePerExperience
-- PromotionGap
-
-These features help improve the predictive capability of the model.
+  * IncomePerYear
+  * ExperienceRatio
+  * IncomePerExperience
+  * PromotionGap
+* Removed unnecessary columns
+* Encoded categorical features
+* Split the dataset into training and testing sets
+* Trained a Random Forest Classifier
+* Evaluated model performance using Accuracy, Confusion Matrix, and Classification Report
+* Generated Feature Importance graph
+* Performed Target Leakage Check
+* Saved the trained model
 
 ---
 
-## 🤖 Machine Learning Model
+## Results
 
-Algorithm Used:
-
-Random Forest Classifier
-
----
-
-## 📊 Evaluation Metrics
-
-- Accuracy Score
-- Confusion Matrix
-- Classification Report
-- Feature Importance
+* Accuracy: **82.65%**
+* Training Samples: **1176**
+* Testing Samples: **294**
+* Leakage Check: **PASSED**
+* Model Saved: **random_forest.pkl**
+* Feature Importance Graph Generated Successfully
 
 ---
 
-## 🔒 Leakage Check
+## Leakage Check
 
 The project ensures:
 
-- Target column is removed before training
-- No future information is used
-- Feature engineering uses only available data
+* Target column removed before model training
+* No future information used during feature engineering
+* No target leakage detected
 
-Leakage Status:
-
-PASSED
+Leakage Status: PASSED
 
 ---
 
-## ▶️ How to Run
+## Generated Output Files
 
-Install dependencies
+* `models/random_forest.pkl`
+* `outputs/feature_importance.png`
+* `outputs/leakage_report.txt`
 
+---
+
+## How to Run
+
+Install the required libraries:
+
+```bash
 pip install -r requirements.txt
+```
 
-Run the project
+Run the project:
 
+```bash
 python main.py
+```
 
 ---
 
-## 📁 Output Files
-
-After execution, the following files are generated:
-
-models/random_forest.pkl
-
-outputs/feature_importance.png
-
-outputs/leakage_report.txt
-
----
-
-## 📈 Results
-
-The project successfully:
-
-- Cleaned the dataset
-- Engineered new features
-- Trained a Random Forest model
-- Evaluated model performance
-- Generated feature importance analysis
-- Performed leakage checking
-- Saved the trained model
-
----
-
-## 🚀 Future Improvements
-
-- Hyperparameter tuning
-- Cross-validation
-- Feature selection
-- Advanced feature engineering
-- Model deployment using Flask or FastAPI
-
----
-
-## 👨‍💻 Author
+## Author
 
 Amar Jaiswal
